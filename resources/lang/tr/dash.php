@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'dashboard' => "Harcamalar",
+    "logout" => "Oturumu kapat",
+    "welcome" => "Hoşgeldin :Name",
+    "personels" => "Personeller ve Araçlar",
+    "payment" => "Ödeme",
+    "date" => "Tarih",
+    "license" => "Plaka",
+    "choose_plate" => "Plaka seç",
+    "kilometre" => "Kilometre",
+    "litre" => "Litre",
+    "amount" => "Tutar (₺)",
+    "cash_credit" => "Nakit/Kredi Kartı",
+    "another_vehicle" => "Başka Araç",
+    "insert" => "Ekle",
+    "new_fuel_receipt" => "Yeni Yakıt Fişi",
+    "exel" => "Exel'e Aktar",
+    "delete" => "Sil",
+    "no_record" => "Kayıt Bulunamadı",
+    "add_vehicle" => "Araç Ekle",
+    "add_personel" => "Personel Ekle",
+    "admin" => "Admin",
+    "created_date" => "Oluşturulma Tarihi",
+];

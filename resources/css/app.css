@@ -1,0 +1,20 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.bg-image-screen{
+    background-image: url("/images/bg-image.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-black-50{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.scrollbar-none{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
