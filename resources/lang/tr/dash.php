@@ -1,6 +1,8 @@
 <?php
 
 return [
+    "yes" => "Evet",
+    "no" => "Hayır",
     'dashboard' => "Harcamalar",
     "logout" => "Oturumu kapat",
     "welcome" => "Hoşgeldin :Name",
@@ -9,12 +11,13 @@ return [
     "date" => "Tarih",
     "license" => "Plaka",
     "choose_plate" => "Plaka seç",
-    "kilometre" => "Kilometre",
-    "litre" => "Litre",
+    "kilometer" => "Kilometre",
+    "liter" => "Litre",
     "amount" => "Tutar (₺)",
     "cash_credit" => "Nakit/Kredi Kartı",
     "another_vehicle" => "Başka Araç",
     "insert" => "Ekle",
+    "add_receipt" => "Fiş Ekle",
     "new_fuel_receipt" => "Yeni Yakıt Fişi",
     "exel" => "Exel'e Aktar",
     "delete" => "Sil",
@@ -23,4 +26,5 @@ return [
     "add_personel" => "Personel Ekle",
     "admin" => "Admin",
     "created_date" => "Oluşturulma Tarihi",
+    "created_at" => "Oluşturuldu",
 ];

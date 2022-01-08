@@ -19,7 +19,7 @@
                             </th>
                             <th scope="col"
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                {{__('dash.date')}}
+                                {{__('dash.created_at')}}
                             </th>
                             <th scope="col"
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -43,16 +43,16 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="text-sm font-medium text-gray-900">
-                                    {{$vehicle->created_date}}
+                                    {{$vehicle->created_at}}
                                 </div>
                             </td>
                             @if(Auth::check() and (Auth::user()->isAdmin() == true))
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <form method="POST" action="{{ route('aracSil',$vehicle->registration_plate)}}">
+                                    <form method="POST" action="{{ route('deleteVehicle',$vehicle->registration_plate)}}">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="text-sm text-red-600">
-                                            Sil
+                                            {{__("dash.delete")}}
                                         </button>
                                     </form>
                                 </td>
@@ -65,7 +65,7 @@
             </div>
 
             <div class="ml-3 ">
-                <form method="POST" action="{{ route('yeniArac') }}">
+                <form method="POST" action="{{ route('createVehicle') }}">
                     @csrf
                     <x-label for="plate" :value="__('dash.license')"/>
 
@@ -86,7 +86,7 @@
             {{__('dash.personels')}}
         </h2>
         <div class="text-right py-3">
-            <x-button onclick="window.location='{{ route('yeniPersonel')}}'">
+            <x-button onclick="window.location='{{ route('createPersonel')}}'">
                 {{__('dash.add_personel')}}
             </x-button>
         </div>
@@ -146,9 +146,9 @@
                 <td class="px-6 py-4 whitespace-nowrap">
                     <div class="text-sm text-gray-900">
             @if ($user->is_admin === 0)
-                Hayır
+                {{__('dash.no')}}
                 @elseif($user->is_admin === 1)
-                Evet
+                {{__('dash.yes')}}
                 @endif
                     </div>
                 </td>
@@ -159,11 +159,11 @@
                 </td>
                 @if(Auth::check() and (Auth::user()->isAdmin() == true))
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <form method="POST" action="{{ route('personelSil',$user->id)}}">
+                        <form method="POST" action="{{ route('deletePersonel',$user->id)}}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="text-sm text-red-600">
-                                Sil
+                                {{__("dash.delete")}}
                             </button>
                         </form>
                     </td>

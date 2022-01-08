@@ -8,12 +8,10 @@ use Illuminate\Http\Request;
 
 class VehicleController extends Controller
 {
-
     public function create()
     {
         return view("dashboard.new-vehicle");
     }
-
     public function destroy(Request $request)
     {
         Vehicle::where('registration_plate', $request->plate)->delete();

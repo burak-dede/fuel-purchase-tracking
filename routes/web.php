@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\PersonelVehicleController;
 use App\Http\Controllers\PersonelController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\VehicleController;
@@ -28,14 +29,16 @@ Route::get('/dashboard', [DashboardController::class, 'create'])->middleware(['a
 
 Route::get('/dashboard/export', [DashboardController::class, 'export'])->middleware(['auth'])->name('dashboard.export');
 
-Route::get('/personelarac', [PersonelController::class, 'show'])->middleware(['admin'])->name('personelarac');
+Route::get('/personelvehicle', [PersonelVehicleController::class, 'create'])->middleware(['admin'])->name('personelvehicle');
 
-Route::post('/personelarac', [VehicleController::class, 'store'])->middleware(['admin'])->name('yeniArac');
+Route::post('/personelvehicle', [VehicleController::class, 'store'])->middleware(['admin'])->name('createVehicle');
 
-Route::delete('/arac/{plate}', [VehicleController::class, 'destroy'])->middleware(['admin'])->name('aracSil');
+Route::delete('/vehicle/{plate}', [VehicleController::class, 'destroy'])->middleware(['admin'])->name('deleteVehicle');
 
-Route::get('/yeniPersonel', [PersonelController::class, 'create'])->middleware(['auth'])->name('yeniPersonel');
+Route::get('/createPersonel', [PersonelController::class, 'create'])->middleware(['auth'])->name('createPersonel');
 
-Route::post('/yeniPersonel', [PersonelController::class, 'store'])->middleware(['auth'])->name('yeniPersonel');
+Route::post('/createPersonel', [PersonelController::class, 'store'])->middleware(['auth'])->name('createPersonel');
+
+Route::delete('/personel/{id}', [PersonelController::class, 'destroy'])->middleware(['admin'])->name('deletePersonel');
 
 require __DIR__.'/auth.php';

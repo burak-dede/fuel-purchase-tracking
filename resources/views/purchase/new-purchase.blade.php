@@ -112,12 +112,12 @@
                     </x-select-menu>
                 </div>
                 <div class="mt-4">
-                    <x-label for="km" :value="__('dash.kilometre')"/>
+                    <x-label for="km" :value="__('dash.kilometer')"/>
                     <x-input id="km" class="block mt-1 w-full" type="number" step=".01" name="km" :value="old('km')" required/>
                 </div>
                 <div class="mt-4">
-                    <x-label for="lt" :value="__('dash.litre')"/>
-                    <x-input id="lt" class="block mt-1 w-full" type="number" step=".01" name="lt" :value="old('lt')" required/>
+                    <x-label for="liter" :value="__('dash.liter')"/>
+                    <x-input id="liter" class="block mt-1 w-full" type="number" step=".01" name="liter" :value="old('liter')" required/>
                 </div>
                 <div class="mt-4">
                     <x-label for="price" :value="__('dash.amount')"/>

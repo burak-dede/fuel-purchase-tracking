@@ -19,7 +19,7 @@ class CreatePurchasesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('vehicle_id');
             $table->float('price');
-            $table->float('litre');
+            $table->float('liter');
             $table->string('payment_type')->default('TTS');
             $table->integer('km');
             $table->date('p_date');

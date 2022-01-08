@@ -13,7 +13,7 @@
                 @if(Auth::check() and (Auth::user()->isAdmin() == true))
                                 <!-- Navigation Links -->
                                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                    <x-nav-link :href="route('personelarac')" :active="request()->routeIs('personelarac')">
+                                    <x-nav-link :href="route('personelvehicle')" :active="request()->routeIs('personelvehicle')">
                                         {{ __('dash.per_and_vec') }}
                                     </x-nav-link>
                                 </div>
@@ -70,8 +70,8 @@
             </x-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-nav-link :href="route('personelarac')" :active="request()->routeIs('personelarac')">
-                {{ __('dash.personels') }}
+            <x-nav-link :href="route('personelvehicle')" :active="request()->routeIs('personelvehicle')">
+                {{ __('dash.per_and_vec') }}
             </x-nav-link>
         </div>
 

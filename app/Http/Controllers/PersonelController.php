@@ -8,15 +8,13 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 
 class PersonelController extends Controller
 {
     public function show()
     {
-        $users = DB::table("users")->get();
-        $vehicles = Vehicle::all();
-        return view("dashboard.personels-and-vehicles")->with('users',$users)->with('vehicles',$vehicles);
+        $users = User::all();
+        return view("dashboard.personels-and-vehicles")->with('users',$users);
     }
 
     public function create()
@@ -39,7 +37,7 @@ class PersonelController extends Controller
             'password' => ['required','min:5'],
         ]);
 
-        $user = User::create([
+        User::create([
             'name' => $request->name,
             'lastname' => $request->lastname,
             'username' => $request->username,

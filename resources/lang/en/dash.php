@@ -1,6 +1,8 @@
 <?php
 
 return [
+    "yes" => "Yes",
+    "no" => "No",
     'dashboard' => "Dashboard",
     "logout" => "Logout",
     "welcome" => "Welcome :Name",
@@ -12,12 +14,13 @@ return [
     "date" => "Date",
     "license" => "License Plate",
     "choose_plate" => "Choose a plate",
-    "kilometre" => "Kilometre",
-    "litre" => "Litre",
-    "amount" => "Receipt Amount",
+    "kilometer" => "Kilometer",
+    "liter" => "Liter",
+    "amount" => "Amount (₺)",
     "cash_credit" => "Cash/Credit Card",
     "another_vehicle" => "Another Vehicle",
     "insert" => "Insert",
+    "add_receipt" => "Add Receipt",
     "new_fuel_receipt" => "New Fuel Receipt",
     "exel" => "Export to Exel",
     "delete" => "Delete",
@@ -26,4 +29,5 @@ return [
     "add_personel" => "Add Personel",
     "admin" => "Admin",
     "created_date" => "Created Date",
+    "created_at" => "Created at",
 ];

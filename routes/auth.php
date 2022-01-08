@@ -16,8 +16,6 @@ Route::get('/login', [AuthenticatedSessionController::class, 'create'])
                 ->middleware('guest')
                 ->name('login');
 
-Route::delete('/personel/{id}', [PersonelController::class, 'destroy'])->middleware(['admin'])->name('personelSil');
-
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('guest');
 

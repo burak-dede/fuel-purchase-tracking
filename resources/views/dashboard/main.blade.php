@@ -7,7 +7,7 @@
 
     <div class="py-3">
         <x-button onclick="window.location='{{ route('purchase')}}'">
-            {{__('dash.insert')}}
+            {{__('dash.add_receipt')}}
         </x-button>
         @if(Auth::check() and (Auth::user()->isAdmin() == true))
             <x-button onclick="window.location='{{ route('dashboard.export')}}'">
@@ -31,11 +31,11 @@
                 </th>
                 <th scope="col"
                     class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    {{__('dash.kilometre')}}
+                    {{__('dash.kilometer')}}
                 </th>
                 <th scope="col"
                     class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    {{__('dash.litre')}}
+                    {{__('dash.liter')}}
                 </th>
                 <th scope="col"
                     class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -80,7 +80,7 @@
                 </td>
                 <td class="px-2 py-4 whitespace-nowrap">
                     <div class="text-sm text-gray-900">
-                        {{$expense->litre}}
+                        {{$expense->liter}}
                     </div>
                 </td>
                 <td class="px-2 py-4 whitespace-nowrap">

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Purchase;
+use App\Models\Vehicle;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
@@ -25,16 +27,17 @@ class PurchaseController extends Controller
 
     public function create(Request $request)
     {
-        $plates = DB::table('vehicles')->select('registration_plate as plate')->get();
+        $plates = Vehicle::all('registration_plate as plate');
 
         return view('purchase.new-purchase')->with('plates',$plates);
     }
 
     public function destroy(Request $request)
     {
-        DB::table('purchases')->where('id', '=', $request->id)->delete();
+        Purchase::destroy($request->id);
         return redirect(RouteServiceProvider::HOME);
     }
+
     public function store(Request $request)
     {
         if ($request->plate == null)
@@ -44,10 +47,16 @@ class PurchaseController extends Controller
         $vehicleId = DB::table('vehicles')->where('registration_plate',$request->plate)->first()->id;
         $date=date('Y-m-d', strtotime($request->date));
 
-        if (DB::table('purchases')->insert(
-            ['user_id'=>$userId, "vehicle_id"=>$vehicleId, "price"=>$request->price, "km"=>$request->km, "litre"=>$request->lt,
-                "payment_type"=>$request->payment_type, "p_date"=>$date]
-        )){
+        $purchase = new Purchase;
+        $purchase->user_id = $userId;
+        $purchase->vehicle_id = $vehicleId;
+        $purchase->price = $request->price;
+        $purchase->km = $request->km;
+        $purchase->liter = $request->liter;
+        $purchase->payment_type = $request->payment_type;
+        $purchase->p_date = $date;
+
+        if ($purchase->save()){
             return redirect(RouteServiceProvider::HOME);
         }
     }
